@@ -6,7 +6,7 @@
 
 <body bgcolor="blue">
 
-<form action="insert.php" method="post" enctype="multipart/form-date">
+<form action="insert.php" method="post" enctype="multipart/form-data">
 
 <table bgcolor="orange" width="500" border="2" cellspacing="2" align="center">
     <tr>
@@ -55,3 +55,37 @@
 
 
 </html>
+
+<?php>
+mysql_connect("$Host","$Username","$Password");
+mysql_select_db("$DatabaseName");
+
+if(isset($POST['submit'])){
+
+
+echo $site_title = $_POST['site_title'];
+echo $site_link = $_POST['site_link'];
+echo $site_keywords = $_POST['site_keywords'];
+echo $site_desc = $_POST['site_desc'];
+echo $site_image = $_FILES['site_image']['name'];
+echo $site_image_tmp = $_FILES['site_image']['tmp_name'];
+
+if($site_title==''  OR $site_link==''  OR $site_keywords=='' OR  $site_desc=='')
+
+echo "<script>alert('Please Fill All Of The Fields')</script>"
+
+$insert_query = "insert into sites(site_title,site_link,site_keywords,site_image) values ('$site_title','$site_link','$site_keywords','$site_desc','$site_image'";
+
+
+
+
+move_upload_file($site_image_tmp"images/sites/{$site_image}");
+
+$run_query = mysql_query($insert_query)) {
+
+        echo "<script>alert('Data Inserted Into Database)>/script>";
+
+}
+
+
+?>

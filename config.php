@@ -1,0 +1,7 @@
+<?php
+
+$Host = ""
+$Username = ""
+$Password = ""
+
+?>
