@@ -3,5 +3,6 @@
 $Host = ""
 $Username = ""
 $Password = ""
+$DatabaseName = ""
 
 ?>
